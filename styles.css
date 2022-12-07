@@ -1,0 +1,212 @@
+/* Color variables */
+:root {
+  --c-gray: #afafaf;
+  --c-default: #dfdfdf;
+  --c-violet: #8f00ff;
+  --c-blue: #0000ff;
+  --c-cyan: #00ffff;
+  --c-green: #32cd32;
+  --c-yellow: #ffff00;
+  --c-orange: #ffa500;
+  --c-red: #ff0000;
+}
+
+/* 
+* Classes to use with JS
+**/
+
+/* background color classes to add to body element,
+* also used for color selectors
+* and color indicator */
+.bg-default {
+  background-color: var(--c-default);
+}
+.bg-violet {
+  background-color: var(--c-violet);
+}
+.bg-blue {
+  background-color: var(--c-blue);
+}
+.bg-cyan {
+  background-color: var(--c-cyan);
+}
+.bg-green {
+  background-color: var(--c-green);
+}
+.bg-yellow {
+  background-color: var(--c-yellow);
+}
+.bg-orange {
+  background-color: var(--c-orange);
+}
+.bg-red {
+  background-color: var(--c-red);
+}
+
+/* fuzzy dark highlight for active colors */
+.selected {
+  box-shadow: 0 0 4px 2px #000, 0 0 6px 3px #fff;
+}
+
+/* General Styles*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 375px;
+  min-height: 100vh;
+  font-family: monospace;
+  font-size: 16px;
+}
+
+.bg-gray {
+  background-color: var(--c-gray);
+}
+
+/*
+* Header styles 
+* */
+header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 70px;
+  align-items: center;
+}
+
+header h1 {
+  width: 100%;
+  grid-area: 1 / 1 / 2 / 3;
+  text-align: center;
+}
+
+/* Menu button styles */
+#menu-button-edge {
+  height: 57px;
+  width: 60px;
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  align-items: start;
+  align-self: end;
+}
+#menu-button {
+  margin-left: 10px;
+  background: url("./hamburger_menu.png") center no-repeat;
+  background-size: 100%;
+  height: 45px;
+  width: 45px;
+  z-index: 1;
+}
+
+#menu-button:hover,
+#menu-button:active {
+  cursor: pointer;
+}
+
+/* 
+* Color menu styles
+* - slide in menu
+* - displays color selectors with their representative colors
+* Bonus features implemented:
+* - color description text removed from color selectors
+*   (except for 'default selector')
+* - active color highlight: radio button (alternative) >>
+*   used box shadow highlight to indicate selection
+**/
+#color-menu-edge {
+  width: 212px;
+  height: 369px;
+}
+
+#color-menu {
+  padding: 15px 0px;
+  width: 200px;
+  position: fixed;
+  left: -220px;
+  top: 73px;
+  opacity: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 10px;
+  align-items: center;
+  align-content: center;
+  list-style: none;
+  border: 1px solid #ababab;
+  border-radius: 10px;
+  background-color: #fff;
+  background-color: #bfbfbf;
+}
+
+/* color selecotr styles */
+/* input style to hide radio button */
+input[type="radio"] {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#color-menu li {
+  display: block;
+  width: 150px;
+  line-height: 20px;
+}
+
+.color-selector {
+  display: block;
+  padding: 5px 20px;
+  height: 20px;
+  border-radius: 15px;
+  border: 1px solid #353535;
+  box-sizing: content-box;
+}
+
+.color-selector:hover {
+  cursor: pointer;
+}
+
+#color-selector-default {
+  text-align: center;
+  color: #57556f;
+}
+
+/* 
+* Footer styles
+* displays feedback about chosen color
+* Bonus features:
+* - display color choice in text (#color-text)
+* + color indicator
+**/
+footer {
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 800;
+}
+
+#color-text {
+  font-style: italic;
+  font-weight: 400;
+}
+
+#color-indicator {
+  margin: 0 10px;
+  display: inline-box;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #353535;
+  border-radius: 50%;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <!-- <script src="script.js" defer></script> -->
+  <!-- below link is an alternative solution based on OOP, this is not the first choice,
+  only because JS-OOP is not covered in the curriculum -->
+  <script src="/alternative-solution/script2.js" defer></script>
+</head>
+
+<body id="body" class="bg-default">
+  <header id="header" class="bg-gray">
+    <!--wrapper element named '...-edge' instead of 'container' because it fitts the purpose
+    better semantically. Serves a role in hiding the c. menu when the mouse moves from m. button to header. 
+    Prevents the c. menu from closing when the mouse moves from m. button to c. menu -->
+    <div id="menu-button-edge">
+      <!--menu-button, opens c.menu on hover-->
+      <div id="menu-button" class="show-on-hover"></div>
+    </div>
+    <h1>Color Toggle</h1>
+  </header>
+
+  <!--wrapper element named '...-edge' instead of 'container' because it fitts the purpose 
+  better semantically. Event.Target for EventListener("mouseleave"), hides the c. menu -->
+  <div id="color-menu-edge">
+    <!--Color Menu, list of selctors for color options, no text except for 'defautlt'
+    The selector's color represents the color which is to be applied on mouse click or by number keys-->
+    <ul id="color-menu" class="show-on-hover">
+      <li class="show-on-hover">
+        <label id="color-selector-default" for="color-input-default"
+          class="color-selector bg-default show-on-hover"><input id="color-input-default"
+            class="color-input show-on-hover" type="radio" name="color" value="default" />Default</label>
+      </li>
+
+      <li class="show-on-hover">
+        <label id="color-selector-violet" for="color-input-violet" class="color-selector bg-violet show-on-hover"><input
+            id="color-input-violet" class="color-input show-on-hover" type="radio" name="color"
+            value="violet" /></label>
+      </li>
+
+      <li class="show-on-hover">
+        <label id="color-selector-blue" for="color-input-blue" class="color-selector bg-blue show-on-hover"><input
+            id="color-input-blue" class="color-input show-on-hover" type="radio" name="color" value="blue" /></label>
+      </li>
+
+      <li class="show-on-hover">
+        <label id="color-selector-cyan" for="color-input-cyan" class="color-selector bg-cyan show-on-hover"><input
+            id="color-input-cyan" class="color-input show-on-hover" type="radio" name="color" value="cyan" /></label>
+      </li>
+
+      <li class="show-on-hover">
+        <label id="color-selector-green" for="color-input-green" class="color-selector bg-green show-on-hover"><input
+            id="color-input-green" class="color-input show-on-hover" type="radio" name="color" value="green" /></label>
+      </li>
+
+      <li class="show-on-hover">
+        <label id="color-selector-yellow" for="color-input-yellow" class="color-selector bg-yellow show-on-hover"><input
+            id="color-input-yellow" class="color-input show-on-hover" type="radio" name="color"
+            value="yellow" /></label>
+      </li>
+
+      <li class="show-on-hover">
+        <label id="color-selector-orange" for="color-input-orange" class="color-selector bg-orange show-on-hover"><input
+            id="color-input-orange" class="color-input show-on-hover" type="radio" name="color"
+            value="orange" /></label>
+      </li>
+
+      <li class="show-on-hover">
+        <label id="color-selector-red" for="color-input-red" class="color-selector bg-red show-on-hover"><input
+            id="color-input-red" class="color-input show-on-hover" type="radio" name="color" value="red" /></label>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Footer element, contains an indicator div and a paragraph with textual representation of the chosen color. 
+  The text is bonus requirement of the assignment, the indicatior div is an extra to make it nicer -->
+  <footer class="bg-gray">
+    <p>
+      Background color:
+      <span id="color-text">Default</span>
+    </p>
+    <div id="color-indicator" class="bg-default"></div>
+  </footer>
+</body>
+
+</html>
